@@ -1,0 +1,39 @@
+fn main (){
+    // FLOAT
+    let recompensas1: f32 = 1.123456789; // Aqui declaramos una de tipo f32
+    let recompensas2: f64 = 1.123456789; // Aqui una de f64. Podriamos no haberle puesto nada y por defecto se crea un f64
+    println! ("El valor de recompensas1 es: {}", recompensas1); //Imprimimos la primera variables, que sera redondeada
+    println! ("El valor de recompensas2 es: {}", recompensas2); //Imprimimos la segunda variable
+    
+    // BOOLENOS
+    let estado1: bool = false;
+    let estado2 = true; //Rust detecta el tipo
+    
+    if estado1 == estado2 { //Condicion. 
+        println!("El estado 1 y 2 es el  mismo"); //Se ejecuta si se cumple la condicion
+    } else{
+        println!("Los estados 1 y dos tienen valores diferentes"); //Se ejecuta si no se cumple la condicion de la linea 12
+    }
+    
+    //FUNCIONES
+    let nombre = "Gavin";
+    saludar(nombre); //llamamos a la funcion saludar
+    
+    //FUNCION SUMA RECOMPENSAS //Funcion que le enviamos dos variables float para que las sume
+    sumar (recompensas1, recompensas2);
+    
+    // Funcion BOOLEANOS
+    comprobar (estado1);
+}
+
+fn saludar (x: &str){ //Recibe un str y lo guarda en X
+    println!("Hola {}", x);
+}
+
+fn sumar (valor1: f32, valor2: f64){
+        println! ("La suma de las recompensas por staking es: {}", valor1 + valor2 as f32); //aqui sumamos pero antes convertirmos a f32 con "AS"
+}
+
+fn comprobar (x: bool){
+    println! ("El valor de estado1 es {}", x);
+}
