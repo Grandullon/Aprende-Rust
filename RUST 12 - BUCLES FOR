@@ -1,28 +1,3 @@
-En Rust, el bucle for se utiliza para iterar sobre una secuencia de elementos. En este tutorial, aprenderemos la sintaxis básica del bucle for y exploraremos algunos ejemplos prácticos.
-
-Sintaxis básica del bucle for
-La sintaxis básica del bucle for en Rust es la siguiente:
-
-for variable in expresion_iterable {
-    // Código a ejecutar en cada iteración
-}variable: Es el nombre de la variable que se utilizará para representar cada elemento de la secuencia durante cada iteración.
-expresion_iterable: Es una expresión que produce una secuencia de elementos sobre la cual iterar.
-Ahora, veamos algunos ejemplos prácticos.
-Ejemplo 1: Práctica básica
-
-// Sintaxis básica
-for numero in (1..11).step_by(2) {
-    println!("La carta número es: {}", numero);
-}
-En este ejemplo, utilizamos el rango (1..11) para iterar sobre los números del 1 al 10 (excluyendo el 11) con un incremento de 2 en cada iteración. Imprimimos el valor de cada número en la consola.
-
-Ejemplo 2: Carrera de caracoles
-let caracoles = ["Satoshi", "Gavin", "Buterin", "Robert", "Hoskinson"];
-for caracol in caracoles.iter() {
-    println!("¡{} ha llegado a la meta!", caracol);
-En este ejemplo, tenemos un array de nombres de caracoles. Utilizamos el método .iter() para obtener un iterador sobre los elementos del array. Luego, en cada iteración, imprimimos un mensaje anunciando que un caracol ha llegado a la meta.
-
-Ejemplo 3: Blockchain Kusama
 struct Bloque_Kusama {
     indice: u32,
     hash: String,
@@ -30,35 +5,49 @@ struct Bloque_Kusama {
     transaccion2: String,
 }
 
-fn main (){
-let blockchain = [
-    Bloque_Kusama {
-        indice: 0,
-        hash: String::from("0"),
-        transaccion1: String::from("Tx1"),
-        transaccion2: String::from("Tx2"),
-    },
-    Bloque_Kusama {
-        indice: 1,
-        hash: String::from("hash1"),
-        transaccion1: String::from("Tx3"),
-        transaccion2: String::from("Tx4"),
-    },
-    Bloque_Kusama {
-        indice: 2,
-        hash: String::from("hash2"),
-        transaccion1: String::from("Tx5"),
-        transaccion2: String::from("Tx6"),
-    },
-];
+fn main() {
+    // Sintaxis básica
+    for numero in (1..11).step_by(2) {
+        println!("La carta numero es: {}", numero);
+    }
 
+    // Ejemplo Carrera de caracoles
+    let caracoles = ["Satoshi", "Gavin", "Buterin", "Robert", "Hoskinson"];
+
+    for caracol in caracoles.iter() {
+        println!("¡{} ha llegado a la meta!", caracol);
+    }
+
+    // Ejemplo Blockchain Kusama.
+    let blockchain = [
+        Bloque_Kusama {
+            indice: 0,
+            hash: String::from("0"),
+            transaccion1: String::from("Tx1"),
+            transaccion2: String::from("Tx2"),
+        },
+        Bloque_Kusama {
+            indice: 1,
+            hash: String::from("hash1"),
+            transaccion1: String::from("Tx3"),
+            transaccion2: String::from("Tx4"),
+        },
+        Bloque_Kusama {
+            indice: 2,
+            hash: String::from("hash2"),
+            transaccion1: String::from("Tx5"),
+            transaccion2: String::from("Tx6"),
+        },
+    ];
+
+    for bloque in blockchain.iter() {
+        println!("Bloque #{}", bloque.indice);
+        println!("Hash: {}", bloque.hash);
+        println!("Transacción 1: {}", bloque.transaccion1);
+        println!("Transacción 2: {}", bloque.transaccion2);
+        println!("------------------");
+    }
 }
-En este ejemplo, definimos una estructura Bloque_Kusama que representa un bloque en la blockchain de Kusama.
 
-Creamos un arreglo de bloques y utilizamos el método .iter() para obtener un iterador sobre los bloques. En cada iteración, imprimimos la información del bloque, incluyendo el índice, el hash y las transacciones asociadas.
-
-¡Eso es todo! Ahora tienes una comprensión básica de los bucles for en Rust y has explorado algunos ejemplos prácticos.
-
-Te invito a terminar el ejemplo anteiror con un bucle for en el que vaya array por array viendo su contenido.
 
 ¡Diviértete programando con Rust!
